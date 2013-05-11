@@ -14,6 +14,7 @@ set guioptions-=m           " Turn off menu
 set guioptions-=T           " Turn off toolbar
 set guioptions-=r           " Turn off right-hand scrollbar
 set guioptions-=L           " Turn off left-hand scrollbar
+set guifont=Consolas:h11    " Use Consolas
 
 " Backup
 set backup                  " Keep backups
