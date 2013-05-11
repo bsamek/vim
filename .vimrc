@@ -9,4 +9,7 @@ let mapleader=","           " Set mapleader to ,
 
 " Appearance
 color molokai               " Set colorscheme
-
+set guioptions-=m           " Turn off menu
+set guioptions-=T           " Turn off toolbar
+set guioptions-=r           " Turn off right-hand scrollbar
+set guioptions-=L           " Turn off left-hand scrollbar
