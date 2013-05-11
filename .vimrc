@@ -13,3 +13,8 @@ set guioptions-=m           " Turn off menu
 set guioptions-=T           " Turn off toolbar
 set guioptions-=r           " Turn off right-hand scrollbar
 set guioptions-=L           " Turn off left-hand scrollbar
+
+" Backup
+set backup                  " Keep backups
+set backupdir=~/.vimbak/backup/  " Set backup directory
+set directory=~/.vimbak/tmp/     " Set swap directory
