@@ -20,8 +20,14 @@ set backup                  " Keep backups
 set backupdir=~/.vimbak/backup/  " Set backup directory
 set directory=~/.vimbak/tmp/     " Set swap directory
 
-"Indentation
+" Indentation
 set expandtab               " Use spaces instead of tabs
 set tabstop=4               " Tabs 4 spaces
 set shiftwidth=4            " Shift 4 spaces
 set autoindent              " Auto indent lines
+
+" Searching
+set ignorecase              " Ignore case in search
+set smartcase               " Unless uppercase in present
+set incsearch               " Use incremental searching
+set hlsearch                " Highlight search results
