@@ -18,3 +18,9 @@ set guioptions-=L           " Turn off left-hand scrollbar
 set backup                  " Keep backups
 set backupdir=~/.vimbak/backup/  " Set backup directory
 set directory=~/.vimbak/tmp/     " Set swap directory
+
+"Indentation
+set expandtab               " Use spaces instead of tabs
+set tabstop=4               " Tabs 4 spaces
+set shiftwidth=4            " Shift 4 spaces
+set autoindent              " Auto indent lines
