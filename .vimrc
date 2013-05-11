@@ -6,6 +6,7 @@ syntax enable               " Turn on syntax highlighting
 set autochdir               " Change to working directory on file open 
 set textwidth=78            " Set textwidth to 78
 let mapleader=","           " Set mapleader to ,
+set wildmenu                " Use enhanced command-line completion
 
 " Appearance
 color molokai               " Set colorscheme
