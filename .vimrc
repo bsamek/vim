@@ -46,3 +46,6 @@ set hlsearch                " Highlight search results
 " Movement
 set scrolloff=5             " Keep five lines around the cursor
 set backspace=2             " Backspace over indent, EOL, and start
+
+" Custom scratch buffers for edit command
+command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
