@@ -49,3 +49,7 @@ set backspace=2             " Backspace over indent, EOL, and start
 
 " Custom scratch buffers for edit command
 command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
+
+" Cutomize gnupg plugin
+let g:GPGPreferArmor=1 
+let g:GPGDefaultRecipients=['brian.samek@gmail.com']
