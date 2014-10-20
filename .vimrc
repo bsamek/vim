@@ -52,4 +52,4 @@ command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
 
 " Cutomize gnupg plugin
 let g:GPGPreferArmor=1 
-let g:GPGDefaultRecipients=['brian.samek@gmail.com']
+let g:GPGPreferSymmetric=1
