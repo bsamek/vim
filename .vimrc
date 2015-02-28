@@ -1,6 +1,17 @@
+" Vundle setup
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Vundle plugins
+Plugin 'gmarik/Vundle.vim'
+
+" End Vundle
+call vundle#end()
+
+
 " The basics
-call pathogen#infect()      " Use pathogen
-set nocompatible            " Use Vim, not Vi defaults
 filetype plugin indent on   " Turn on filetype plugin and indent
 syntax enable               " Turn on syntax highlighting
 set autochdir               " Change to working directory on file open 
