@@ -49,6 +49,7 @@ map <leader>/ :nohlsearch<cr>
 map <leader>i :PluginInstall<cr>
 map <leader>n :NERDTree<cr>
 map <leader>s :sort<cr>
+map <leader>t :TagbarToggle<cr>
 map <leader>u :GundoToggle<cr>
 
 " Appearance
