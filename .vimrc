@@ -6,20 +6,30 @@ call vundle#begin()
 
 " Vundle Plugins
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'bling/vim-airline'
+Plugin 'chrisbra/csv.vim'
+Plugin 'ervandew/supertab'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'godlygeek/tabular'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'sjl/gundo.vim'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 
 " Vundle SnipMate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
 " End Vundle
 call vundle#end()
@@ -35,11 +45,15 @@ set hidden                  " Hide buffers instead of closing them
 
 " Mappings
 let mapleader=","
-map <leader>n :NERDTree<cr>
 map <leader>/ :nohlsearch<cr>
+map <leader>i :PluginInstall<cr>
+map <leader>n :NERDTree<cr>
+map <leader>s :sort<cr>
+map <leader>u :GundoToggle<cr>
 
 " Appearance
-color molokai               " Set colorscheme
+colorscheme solarized       " Use solarized
+set background=dark         " Use dark solarized
 set guioptions-=m           " Turn off menu
 set guioptions-=T           " Turn off toolbar
 set guioptions-=r           " Turn off right-hand scrollbar
@@ -92,3 +106,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Customize airline plugin
+let g:airline#extensions#tabline#enabled = 1
