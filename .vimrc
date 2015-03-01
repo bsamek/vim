@@ -4,21 +4,39 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Vundle plugins
+" Vundle Plugins
+Plugin 'Lokaltog/vim-easymotion'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+
+" Vundle SnipMate
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
 " End Vundle
 call vundle#end()
-
 
 " The basics
 filetype plugin indent on   " Turn on filetype plugin and indent
 syntax enable               " Turn on syntax highlighting
 set autochdir               " Change to working directory on file open 
 set textwidth=78            " Set textwidth to 78
-let mapleader=","           " Set mapleader to ,
 set wildmenu                " Use enhanced command-line completion
 set wildignorecase          " Don't use case for file/directory completion
+set hidden                  " Hide buffers instead of closing them
+
+" Mappings
+let mapleader=","
+map <leader>n :NERDTree<cr>
+map <leader>/ :nohlsearch<cr>
 
 " Appearance
 color molokai               " Set colorscheme
@@ -65,3 +83,12 @@ command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
 " Cutomize gnupg plugin
 let g:GPGPreferArmor=1 
 let g:GPGDefaultRecipients=['brian.samek@gmail.com']
+
+" Customize syntastic plugin
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
