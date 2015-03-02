@@ -48,8 +48,12 @@ set hidden                  " Hide buffers instead of closing them
 " Mappings
 let mapleader=","
 map <leader>/ :nohlsearch<cr>
-map <leader>i :PluginInstall<cr>
 map <leader>n :NERDTree<cr>
+map <leader>pc :PluginClean<cr>
+map <leader>pi :PluginInstall<cr>
+map <leader>ps :PluginSearch 
+map <leader>pu :PluginUpdate<cr>
+map <leader>r :!%:p<cr>
 map <leader>s :sort<cr>
 map <leader>t :TagbarToggle<cr>
 map <leader>u :GundoToggle<cr>
