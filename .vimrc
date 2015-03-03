@@ -118,3 +118,4 @@ let g:syntastic_check_on_wq = 0
 
 " Customize airline plugin
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#whitespace#enabled = 0
