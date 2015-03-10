@@ -21,6 +21,10 @@ Plugin 'tpope/vim-surround'
 " End Vundle
 call vundle#end()
 
+" Customize plugins
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#whitespace#enabled = 0
+
 " The basics
 filetype plugin indent on   " Turn on filetype plugin and indent
 syntax enable               " Turn on syntax highlighting
@@ -29,19 +33,6 @@ set textwidth=78            " Set textwidth to 78
 set wildmenu                " Use enhanced command-line completion
 set wildignorecase          " Don't use case for file/directory completion
 set hidden                  " Hide buffers instead of closing them
-
-" Mappings
-let mapleader=","
-map <leader>/ :nohlsearch<cr>
-map <leader>n :NERDTreeToggle<cr>
-map <leader>pc :PluginClean<cr>
-map <leader>pi :PluginInstall<cr>
-map <leader>ps :PluginSearch 
-map <leader>pu :PluginUpdate<cr>
-map <leader>r :!%:p<cr>
-map <leader>s :sort<cr>
-map <leader>t :TagbarToggle<cr>
-map <leader>u :GundoToggle<cr>
 
 " Appearance
 colorscheme solarized       " Use solarized
@@ -83,13 +74,19 @@ set hlsearch                " Highlight search results
 set scrolloff=5             " Keep five lines around the cursor
 set backspace=2             " Backspace over indent, EOL, and start
 
+" Mappings
+let mapleader=","
+nnoremap <leader>/ :nohlsearch<cr>
+nnoremap <leader>l :set list!<cr>
+nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>pc :PluginClean<cr>
+nnoremap <leader>pi :PluginInstall<cr>
+nnoremap <leader>ps :PluginSearch<cr>
+nnoremap <leader>pu :PluginUpdate<cr>
+nnoremap <leader>r :!%:p<cr>
+nnoremap <leader>s :sort<cr>
+nnoremap <leader>t :TagbarToggle<cr>
+nnoremap <leader>u :GundoToggle<cr>
+
 " Custom scratch buffers for edit command
 command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
-
-" Cutomize gnupg plugin
-let g:GPGPreferArmor=1 
-let g:GPGDefaultRecipients=['brian.samek@gmail.com']
-
-" Customize airline plugin
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#whitespace#enabled = 0
