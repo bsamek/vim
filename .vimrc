@@ -1,39 +1,22 @@
 " Vundle setup
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/vimfiles/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle Plugins
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'bling/vim-airline'
-Plugin 'chrisbra/csv.vim'
 Plugin 'ervandew/supertab'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'justinmk/vim-sneak'
 Plugin 'kien/ctrlp.vim'
-Plugin 'kovisoft/slimv'
 Plugin 'majutsushi/tagbar'
-Plugin 'paredit.vim'
-Plugin 'rodjek/vim-puppet'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'sjl/gundo.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-
-" Vundle SnipMate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 
 " End Vundle
 call vundle#end()
@@ -50,7 +33,7 @@ set hidden                  " Hide buffers instead of closing them
 " Mappings
 let mapleader=","
 map <leader>/ :nohlsearch<cr>
-map <leader>n :NERDTree<cr>
+map <leader>n :NERDTreeToggle<cr>
 map <leader>pc :PluginClean<cr>
 map <leader>pi :PluginInstall<cr>
 map <leader>ps :PluginSearch 
@@ -62,7 +45,7 @@ map <leader>u :GundoToggle<cr>
 
 " Appearance
 colorscheme solarized       " Use solarized
-set background=dark         " Use dark solarized
+set background=light         " Use dark solarized
 set guioptions-=m           " Turn off menu
 set guioptions-=T           " Turn off toolbar
 set guioptions-=r           " Turn off right-hand scrollbar
@@ -106,15 +89,6 @@ command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
 " Cutomize gnupg plugin
 let g:GPGPreferArmor=1 
 let g:GPGDefaultRecipients=['brian.samek@gmail.com']
-
-" Customize syntastic plugin
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Customize airline plugin
 let g:airline#extensions#tabline#enabled = 1
