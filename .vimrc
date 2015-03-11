@@ -1,7 +1,11 @@
 " Vundle setup
 set nocompatible
 filetype off
-set rtp+=~/vimfiles/bundle/Vundle.vim
+if has("gui_win32")
+    set rtp+=~/vimfiles/bundle/Vundle.vim
+else
+    set rtp+=~/.vim/bundle/Vundle.vim
+endif
 call vundle#begin()
 
 " Vundle Plugins
@@ -35,8 +39,6 @@ set wildignorecase          " Don't use case for file/directory completion
 set hidden                  " Hide buffers instead of closing them
 
 " Appearance
-colorscheme solarized       " Use solarized
-set background=light         " Use dark solarized
 set guioptions-=m           " Turn off menu
 set guioptions-=T           " Turn off toolbar
 set guioptions-=r           " Turn off right-hand scrollbar
@@ -44,13 +46,17 @@ set guioptions-=L           " Turn off left-hand scrollbar
 
 " Font
 if has("gui_running")
+  colorscheme solarized       " Use solarized
+  set background=light        " Use dark solarized
+
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 10
+    set guifont=Inconsolata\ 13
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
     set guifont=Consolas:h11:cANSI
   endif
+
 endif
 
 " Backup
