@@ -2,20 +2,20 @@
 set nocompatible
 filetype off
 if has("gui_win32")
-    set rtp+=~/vimfiles/bundle/Vundle.vim
+  set rtp+=~/vimfiles/bundle/Vundle.vim
 else
-    set rtp+=~/.vim/bundle/Vundle.vim
+  set rtp+=~/.vim/bundle/Vundle.vim
 endif
 call vundle#begin()
 
 " Vundle Plugins
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Shougo/unite.vim'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'jlanzarotta/bufexplorer'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
@@ -24,10 +24,6 @@ Plugin 'tpope/vim-surround'
 
 " End Vundle
 call vundle#end()
-
-" Customize plugins
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#whitespace#enabled = 0
 
 " The basics
 filetype plugin indent on   " Turn on filetype plugin and indent
@@ -90,9 +86,11 @@ nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>ps :PluginSearch<cr>
 nnoremap <leader>pu :PluginUpdate<cr>
 nnoremap <leader>r :!%:p<cr>
-nnoremap <leader>s :sort<cr>
+vnoremap <leader>s :sort<cr>
 nnoremap <leader>t :TagbarToggle<cr>
-nnoremap <leader>u :GundoToggle<cr>
+nnoremap <leader>ff :Unite file<cr>
+nnoremap <leader>fb :Unite buffer<cr>
+nnoremap <leader>fr :Unite file<cr>
 
 " Custom scratch buffers for edit command
 command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
