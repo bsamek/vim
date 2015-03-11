@@ -10,7 +10,6 @@ call vundle#begin()
 
 " Vundle Plugins
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'Shougo/unite.vim'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
@@ -39,6 +38,7 @@ set guioptions-=m           " Turn off menu
 set guioptions-=T           " Turn off toolbar
 set guioptions-=r           " Turn off right-hand scrollbar
 set guioptions-=L           " Turn off left-hand scrollbar
+set laststatus=2            " Always show status bar
 
 " Font
 if has("gui_running")
@@ -88,9 +88,6 @@ nnoremap <leader>pu :PluginUpdate<cr>
 nnoremap <leader>r :!%:p<cr>
 vnoremap <leader>s :sort<cr>
 nnoremap <leader>t :TagbarToggle<cr>
-nnoremap <leader>ff :Unite file<cr>
-nnoremap <leader>fb :Unite buffer<cr>
-nnoremap <leader>fr :Unite file<cr>
 
 " Custom scratch buffers for edit command
 command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
