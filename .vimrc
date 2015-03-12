@@ -27,7 +27,7 @@ call vundle#end()
 " The basics
 filetype plugin indent on   " Turn on filetype plugin and indent
 syntax enable               " Turn on syntax highlighting
-set autochdir               " Change to working directory on file open 
+set autochdir               " Change to working directory on file open
 set textwidth=78            " Set textwidth to 78
 set wildmenu                " Use enhanced command-line completion
 set wildignorecase          " Don't use case for file/directory completion
@@ -79,6 +79,7 @@ set backspace=2             " Backspace over indent, EOL, and start
 " Mappings
 let mapleader=","
 nnoremap <leader>/ :nohlsearch<cr>
+inoremap jj <esc>
 nnoremap <leader>l :set list!<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>pc :PluginClean<cr>
