@@ -79,6 +79,7 @@ set backspace=2             " Backspace over indent, EOL, and start
 " Mappings
 let mapleader=","
 nnoremap <leader>/ :nohlsearch<cr>
+nnoremap <leader>b :buf 
 inoremap jj <esc>
 nnoremap <leader>l :set list!<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
