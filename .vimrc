@@ -19,6 +19,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-surround'
 
 " End Vundle
@@ -90,6 +91,7 @@ nnoremap <leader>pu :PluginUpdate<cr>
 nnoremap <leader>r :!%:p<cr>
 vnoremap <leader>s :sort<cr>
 nnoremap <leader>t :TagbarToggle<cr>
+nnoremap <leader>u :GundoToggle<cr>
 
 " Custom scratch buffers for edit command
 command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
