@@ -11,6 +11,7 @@ call vundle#begin()
 " Vundle Plugins
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
 Plugin 'gmarik/Vundle.vim'
@@ -92,6 +93,7 @@ nnoremap <leader>r :!%:p<cr>
 vnoremap <leader>s :sort<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
+nnoremap <leader>w :w<cr>:call VimuxRunLastCommand()<cr>
 
 " Custom scratch buffers for edit command
 command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
