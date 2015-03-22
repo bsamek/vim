@@ -45,7 +45,7 @@ set laststatus=2            " Always show status bar
 " Font
 if has("gui_running")
   colorscheme solarized       " Use solarized
-  set background=light        " Use dark solarized
+  set background=dark         " Use dark solarized
 
   if has("gui_gtk2")
     set guifont=Inconsolata\ 13
