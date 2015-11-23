@@ -87,9 +87,6 @@ nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>b :buf 
 inoremap jj <esc>
 inoremap jk <esc>
-nnoremap <leader>c :Sedit<cr>
-nnoremap <leader>d :%!gpg<cr>
-nnoremap <leader>e :%!gpg -ear brian.samek@gmail.com<cr>
 nnoremap <leader>l :set list!<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>pc :PluginClean<cr>
