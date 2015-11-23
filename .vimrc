@@ -84,6 +84,7 @@ let mapleader=","
 nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>b :buf 
 inoremap jj <esc>
+inoremap jk <esc>
 nnoremap <leader>l :set list!<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>pc :PluginClean<cr>
