@@ -79,12 +79,18 @@ set hlsearch                " Highlight search results
 set scrolloff=5             " Keep five lines around the cursor
 set backspace=2             " Backspace over indent, EOL, and start
 
+" Custom scratch buffers for edit command
+command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
+
 " Mappings
 let mapleader=","
 nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>b :buf 
 inoremap jj <esc>
 inoremap jk <esc>
+nnoremap <leader>c :Sedit<cr>
+nnoremap <leader>d :%!gpg<cr>
+nnoremap <leader>e :%!gpg -ear brian.samek@gmail.com<cr>
 nnoremap <leader>l :set list!<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>pc :PluginClean<cr>
@@ -97,5 +103,3 @@ nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>w :w<cr>:call VimuxRunLastCommand()<cr>
 
-" Custom scratch buffers for edit command
-command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
