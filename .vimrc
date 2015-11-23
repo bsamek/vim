@@ -22,7 +22,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'gnupg'
 
 " End Vundle
 call vundle#end()
