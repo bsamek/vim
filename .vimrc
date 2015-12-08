@@ -82,20 +82,27 @@ set backspace=2             " Backspace over indent, EOL, and start
 command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
 
 " Mappings
-let mapleader=","
-nnoremap <leader>/ :nohlsearch<cr>
-nnoremap <leader>b :buf 
 inoremap jj <esc>
 inoremap jk <esc>
+
+" Leader
+let mapleader="\<Space>"
+nnoremap <leader>ac :PluginClean<cr>
+nnoremap <leader>ai :PluginInstall<cr>
+nnoremap <leader>as :PluginSearch<cr>
+nnoremap <leader>au :PluginUpdate<cr>
+nnoremap <leader>/ :nohlsearch<cr>
+nnoremap <leader>b :buf 
+vmap <leader>d "+d
 nnoremap <leader>l :set list!<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>pc :PluginClean<cr>
-nnoremap <leader>pi :PluginInstall<cr>
-nnoremap <leader>ps :PluginSearch<cr>
-nnoremap <leader>pu :PluginUpdate<cr>
-nnoremap <leader>r :!%:p<cr>
-vnoremap <leader>s :sort<cr>
+nnoremap <leader>o :CtrlP<CR>
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+nnoremap <leader>r :w<cr>:call VimuxRunLastCommand()<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
-nnoremap <leader>w :w<cr>:call VimuxRunLastCommand()<cr>
-
+nnoremap <leader>v V
+nnoremap <leader>w :w<CR>
+vmap <leader>y "+y
