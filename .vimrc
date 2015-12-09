@@ -108,3 +108,6 @@ nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>v V
 nnoremap <leader>w :w<CR>
 vmap <leader>y "+y
+
+" ctrlp
+let g:ctrlp_extensions = ['buffertag', 'line', 'changes']
