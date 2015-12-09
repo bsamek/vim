@@ -22,6 +22,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rking/ag.vim'
 
 " End Vundle
 call vundle#end()
@@ -101,6 +102,7 @@ nmap <leader>p "+p
 nmap <leader>P "+P
 vmap <leader>p "+p
 nnoremap <leader>r :w<cr>:call VimuxRunLastCommand()<cr>
+nnoremap <leader>s :Ag! 
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>v V
