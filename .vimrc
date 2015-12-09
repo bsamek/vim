@@ -88,6 +88,14 @@ inoremap jk <esc>
 
 " Leader
 let mapleader="\<Space>"
+
+" Window movement
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
+
+" General mappings
 nnoremap <leader>ac :PluginClean<cr>
 nnoremap <leader>ai :PluginInstall<cr>
 nnoremap <leader>as :PluginSearch<cr>
@@ -95,7 +103,6 @@ nnoremap <leader>au :PluginUpdate<cr>
 nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>b :buf 
 vmap <leader>d "+d
-nnoremap <leader>l :set list!<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>o :CtrlP<CR>
 nmap <leader>p "+p
