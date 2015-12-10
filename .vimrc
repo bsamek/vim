@@ -45,10 +45,10 @@ set guioptions-=L           " Turn off left-hand scrollbar
 set laststatus=2            " Always show status bar
 
 " Font
-if has("gui_running")
-  colorscheme solarized       " Use solarized
-  set background=dark         " Use dark solarized
+colorscheme solarized       " Use solarized
+set background=dark         " Use dark solarized
 
+if has("gui_running")
   if has("gui_gtk2")
     set guifont=Inconsolata\ 13
   elseif has("gui_macvim")
@@ -56,7 +56,6 @@ if has("gui_running")
   elseif has("gui_win32")
     set guifont=Consolas:h11:cANSI
   endif
-
 endif
 
 " Backup
