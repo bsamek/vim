@@ -23,6 +23,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rking/ag.vim'
+Plugin 'fatih/vim-go'
 
 " End Vundle
 call vundle#end()
