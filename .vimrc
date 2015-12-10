@@ -118,3 +118,6 @@ vmap <leader>y "+y
 
 " ctrlp
 let g:ctrlp_extensions = ['buffertag', 'line', 'changes']
+
+" vim-airline
+let g:airline_detect_whitespace=0
