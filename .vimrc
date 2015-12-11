@@ -45,8 +45,9 @@ set guioptions-=L           " Turn off left-hand scrollbar
 set laststatus=2            " Always show status bar
 
 " Font
-colorscheme solarized       " Use solarized
 set background=dark         " Use dark solarized
+let g:solarized_termtrans = 1 " Fix for iTerm2
+colorscheme solarized       " Use solarized
 
 if has("gui_running")
   if has("gui_gtk2")
