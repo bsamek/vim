@@ -28,6 +28,7 @@ Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-sleuth'
+Plugin 'scrooloose/syntastic'
 
 " End Vundle
 call vundle#end()
@@ -94,6 +95,12 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+" Syntastic recommended defaults
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " Leader
 let mapleader="\<Space>"
 
@@ -129,3 +136,4 @@ let g:ctrlp_extensions = ['buffertag', 'line', 'changes']
 
 " vim-airline
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#syntastic#enabled = 1
