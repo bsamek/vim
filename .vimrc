@@ -27,6 +27,7 @@ Plugin 'fatih/vim-go'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-sleuth'
 
 " End Vundle
 call vundle#end()
@@ -67,12 +68,6 @@ set backup                  " Keep backups
 set backupdir=~/.vimbak/backup/  " Set backup directory
 set directory=~/.vimbak/tmp/     " Set swap directory
 
-" Indentation
-set expandtab               " Use spaces instead of tabs
-set softtabstop=4           " Tabs 4 spaces
-set shiftwidth=4            " Shift 4 spaces
-set autoindent              " Auto indent lines
-
 " Searching
 set ignorecase              " Ignore case in search
 set smartcase               " Unless uppercase in present
@@ -82,6 +77,7 @@ set hlsearch                " Highlight search results
 " Movement
 set scrolloff=5             " Keep five lines around the cursor
 set backspace=2             " Backspace over indent, EOL, and start
+set autoindent              " Auto indent lines
 
 " Custom scratch buffers for edit command
 command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
