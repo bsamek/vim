@@ -125,6 +125,8 @@ nnoremap <leader>au :PluginUpdate<cr>
 nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>b :buf 
 vmap <leader>d "+d
+nnoremap <leader>g :GoDef<cr>
+nnoremap <leader>j :tabnext<cr>
 nnoremap <leader>l :e#<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>o <C-^>
