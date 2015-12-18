@@ -122,7 +122,7 @@ nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>b :buf 
 vmap <leader>d "+d
 nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>o :CtrlP<CR>
+nnoremap <leader>o <C-^>
 nmap <leader>p "+p
 nmap <leader>P "+P
 vmap <leader>p "+p
