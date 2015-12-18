@@ -29,6 +29,9 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-sleuth'
 Plugin 'scrooloose/syntastic'
+Plugin 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'tpope/vim-unimpaired'
 
 " End Vundle
 call vundle#end()
