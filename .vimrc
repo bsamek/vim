@@ -50,7 +50,7 @@ set guioptions-=L           " Turn off left-hand scrollbar
 set laststatus=2            " Always show status bar
 
 " Font
-set background=dark         " Use dark solarized
+set background=light         " Use light solarized
 let g:solarized_termtrans = 1 " Fix for iTerm2
 colorscheme solarized       " Use solarized
 
