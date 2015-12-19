@@ -10,27 +10,23 @@ call vundle#begin()
 
 " Vundle Plugins
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'SirVer/ultisnips'
+Plugin 'Townk/vim-autoclose'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'bling/vim-airline'
+Plugin 'fatih/vim-go'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
+Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rking/ag.vim'
-Plugin 'fatih/vim-go'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-sleuth'
-Plugin 'scrooloose/syntastic'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'Townk/vim-autoclose'
 
 " End Vundle
 call vundle#end()
@@ -93,13 +89,13 @@ let g:syntastic_check_on_wq = 0
 let mapleader="\<Space>"
 
 " Mappings
+:noremap <leader>s :Ag! 
+inoremap jj <esc>
+inoremap jk <esc>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-inoremap jj <esc>
-inoremap jk <esc>
-nnoremap <leader>p "+p
 nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>ac :PluginClean<cr>
 nnoremap <leader>ai :PluginInstall<cr>
@@ -111,8 +107,8 @@ nnoremap <leader>j :tabnext<cr>
 nnoremap <leader>l :e#<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>o <C-^>
+nnoremap <leader>p "+p
 nnoremap <leader>r :so %<cr>
-:noremap <leader>s :Ag! 
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>v V
