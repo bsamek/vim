@@ -11,7 +11,6 @@ call vundle#begin()
 " Vundle Plugins
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
@@ -129,7 +128,6 @@ nnoremap <leader>o <C-^>
 nmap <leader>p "+p
 nmap <leader>P "+P
 vmap <leader>p "+p
-nnoremap <leader>r :w<cr>:call VimuxRunLastCommand()<cr>
 nnoremap <leader>s :Ag! 
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
