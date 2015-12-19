@@ -141,9 +141,6 @@ nnoremap <leader>v V
 nnoremap <leader>w :w<CR>
 vmap <leader>y "+y
 
-" ctrlp
-let g:ctrlp_extensions = ['buffertag', 'line', 'changes']
-
 " vim-airline
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#syntastic#enabled = 1
