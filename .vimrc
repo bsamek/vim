@@ -89,7 +89,6 @@ let g:syntastic_check_on_wq = 0
 let mapleader="\<Space>"
 
 " Mappings
-:noremap <leader>s :Ag! 
 inoremap jj <esc>
 inoremap jk <esc>
 nnoremap <C-h> <C-w>h
@@ -113,6 +112,7 @@ nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>v V
 nnoremap <leader>w :w<CR>
+noremap <leader>s :Ag! 
 vnoremap <leader>d "+d
 vnoremap <leader>p "+p
 vnoremap <leader>y "+y
