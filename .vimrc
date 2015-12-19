@@ -75,10 +75,6 @@ set autoindent              " Auto indent lines
 " Custom scratch buffers for edit command
 command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
 
-" Mappings
-inoremap jj <esc>
-inoremap jk <esc>
-
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -102,28 +98,30 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" General mappings
+" Mappings 
+inoremap jj <esc>
+inoremap jk <esc>
+nnoremap <leader>p "+p
+nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>ac :PluginClean<cr>
 nnoremap <leader>ai :PluginInstall<cr>
 nnoremap <leader>as :PluginSearch<cr>
 nnoremap <leader>au :PluginUpdate<cr>
-nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>b :buf 
-vmap <leader>d "+d
 nnoremap <leader>g :GoDef<cr>
 nnoremap <leader>j :tabnext<cr>
 nnoremap <leader>l :e#<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>o <C-^>
-nmap <leader>p "+p
-nmap <leader>P "+P
-vmap <leader>p "+p
-nnoremap <leader>s :Ag! 
+nnoremap <leader>r :so %<cr>
+:noremap <leader>s :Ag! 
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>v V
 nnoremap <leader>w :w<CR>
-vmap <leader>y "+y
+vnoremap <leader>d "+d
+vnoremap <leader>p "+p
+vnoremap <leader>y "+y
 
 " vim-airline
 let g:airline#extensions#whitespace#enabled = 0
