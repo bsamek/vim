@@ -92,13 +92,11 @@ let g:syntastic_check_on_wq = 0
 " Leader
 let mapleader="\<Space>"
 
-" Window movement
+" Mappings
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" Mappings 
 inoremap jj <esc>
 inoremap jk <esc>
 nnoremap <leader>p "+p
