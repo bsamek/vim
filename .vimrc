@@ -79,16 +79,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Prevent preview buffer from appearing in vim-go
 set completeopt=menuone
 
-" Syntastic recommended defaults
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" Leader
-let mapleader="\<Space>"
-
 " Mappings
+let mapleader="\<Space>"
 inoremap jj <esc>
 inoremap jk <esc>
 nnoremap <C-h> <C-w>h
