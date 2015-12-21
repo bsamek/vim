@@ -114,4 +114,3 @@ vnoremap <leader>y "+y
 
 " vim-airline
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#syntastic#enabled = 1
