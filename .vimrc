@@ -30,6 +30,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'pangloss/vim-javascript'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
+Plugin 'tmhedberg/SimpylFold'
 
 " End Vundle
 call vundle#end()
@@ -107,10 +108,18 @@ nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>v V
 nnoremap <leader>w :w<CR>
-noremap <leader>s :Ag! 
+nnoremap <leader>s :Ag! 
+nnoremap <leader>z za
 vnoremap <leader>d "+d
 vnoremap <leader>p "+p
 vnoremap <leader>y "+y
 
 " vim-airline
 let g:airline#extensions#whitespace#enabled = 0
+
+" ctrlp
+let g:ctrlp_extensions = ['tag']
+
+" fold
+set foldmethod=manual
+set foldlevel=99
