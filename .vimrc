@@ -11,7 +11,6 @@ call vundle#begin()
 " Vundle Plugins
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'SirVer/ultisnips'
-Plugin 'Townk/vim-autoclose'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'bling/vim-airline'
