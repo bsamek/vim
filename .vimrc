@@ -31,6 +31,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'joshdick/onedark.vim'
 
 " End Vundle
 call vundle#end()
@@ -52,9 +53,9 @@ set guioptions-=L           " Turn off left-hand scrollbar
 set laststatus=2            " Always show status bar
 
 " Font
-set background=light         " Use light solarized
-let g:solarized_termtrans = 1 " Fix for iTerm2
-colorscheme solarized       " Use solarized
+let g:onedark_termcolors=16
+colorscheme onedark
+set background=dark
 
 " Backup
 set backup                  " Keep backups
@@ -85,8 +86,6 @@ set completeopt=menuone
 
 " Mappings
 let mapleader="\<Space>"
-inoremap jj <esc>
-inoremap jk <esc>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
