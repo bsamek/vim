@@ -86,6 +86,7 @@ set completeopt=menuone
 
 " Mappings
 let mapleader="\<Space>"
+inoremap fd <esc>
 inoremap jj <esc>
 inoremap jk <esc>
 nnoremap <C-h> <C-w>h
