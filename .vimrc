@@ -1,11 +1,7 @@
 " Vundle setup
 set nocompatible
 filetype off
-if has("gui_win32")
-  set rtp+=~/vimfiles/bundle/Vundle.vim
-else
-  set rtp+=~/.vim/bundle/Vundle.vim
-endif
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle Plugins
@@ -42,12 +38,6 @@ set textwidth=78            " Set textwidth to 78
 set wildmenu                " Use enhanced command-line completion
 set wildignorecase          " Don't use case for file/directory completion
 set hidden                  " Hide buffers instead of closing them
-
-" Appearance
-set guioptions-=m           " Turn off menu
-set guioptions-=T           " Turn off toolbar
-set guioptions-=r           " Turn off right-hand scrollbar
-set guioptions-=L           " Turn off left-hand scrollbar
 set laststatus=2            " Always show status bar
 
 " Font
