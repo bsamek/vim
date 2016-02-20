@@ -83,7 +83,7 @@ nnoremap <leader>ac :PluginClean<cr>
 nnoremap <leader>ai :PluginInstall<cr>
 nnoremap <leader>as :PluginSearch<cr>
 nnoremap <leader>au :PluginUpdate<cr>
-nnoremap <leader>b :buf 
+nnoremap <leader>b :buf
 nnoremap <leader>g :GoDef<cr>
 nnoremap <leader>j :tabnext<cr>
 nnoremap <leader>l :e#<cr>
@@ -95,7 +95,7 @@ nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>v V
 nnoremap <leader>w :w<CR>
-nnoremap <leader>s :Ag! 
+nnoremap <leader>s :Ag!
 nnoremap <leader>z za
 vnoremap <leader>d "+d
 vnoremap <leader>p "+p
@@ -103,7 +103,3 @@ vnoremap <leader>y "+y
 
 " ctrlp
 let g:ctrlp_extensions = ['tag']
-
-" fold
-set foldmethod=manual
-set foldlevel=99
