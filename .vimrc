@@ -111,9 +111,6 @@ vnoremap <leader>d "+d
 vnoremap <leader>p "+p
 vnoremap <leader>y "+y
 
-" vim-airline
-let g:airline#extensions#whitespace#enabled = 0
-
 " ctrlp
 let g:ctrlp_extensions = ['tag']
 
