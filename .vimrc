@@ -105,16 +105,18 @@ vnoremap <leader>cd "+d
 vnoremap <leader>cy "+y
 
 " FZF
+nnoremap <leader>/ :History/<cr>
+nnoremap <leader>? :Helptags<cr>
+nnoremap <leader>h :History<cr>
+nnoremap <leader>q :History:<cr>
+nnoremap <leader>l :Locate 
+
 nnoremap <leader>bb :Buffers<cr>
 nnoremap <leader>bc :BCommits<cr>
 nnoremap <leader>bs :BLines<cr>
-nnoremap <leader>f/ :History/<cr>
-nnoremap <leader>f? :Helptags<cr>
+
 nnoremap <leader>fc :Commits<cr>
 nnoremap <leader>ff :GitFiles<cr>
-nnoremap <leader>fh :History<cr>
-nnoremap <leader>fl :Locate 
-nnoremap <leader>fq :History:<cr>
 nnoremap <leader>fs :Ag 
 
 " Encryption
