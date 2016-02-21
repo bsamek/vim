@@ -90,9 +90,7 @@ nnoremap <leader>au :PluginUpdate<cr>
 nnoremap <leader>b :buf
 nnoremap <leader>g :GoDef<cr>
 nnoremap <leader>j :tabnext<cr>
-nnoremap <leader>l :e#<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>o <C-^>
 nnoremap <leader>p "+p
 nnoremap <leader>r :w<cr>:so %<cr>
 nnoremap <leader>t :TagbarToggle<cr>
