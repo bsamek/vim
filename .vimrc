@@ -106,21 +106,14 @@ vnoremap <leader>cy "+y
 nnoremap <leader>bb :Buffers<cr>
 nnoremap <leader>bc :BCommits<cr>
 nnoremap <leader>bs :BLines<cr>
-nnoremap <leader>bt :BTags<cr>
-nnoremap <leader>f' :Marks<cr>
 nnoremap <leader>f/ :History/<cr>
-nnoremap <leader>f: :Commands<cr>
 nnoremap <leader>f? :Helptags<cr>
 nnoremap <leader>fc :Commits<cr>
 nnoremap <leader>ff :GitFiles<cr>
 nnoremap <leader>fh :History<cr>
 nnoremap <leader>fl :Locate 
-nnoremap <leader>fm :Maps<cr>
 nnoremap <leader>fq :History:<cr>
 nnoremap <leader>fs :Ag 
-nnoremap <leader>ft :Tags<cr>
-nnoremap <leader>fu :Snippets<cr>
-nnoremap <leader>fw :Windows<cr>
 
 " Misc
 nnoremap <leader>g :GoDef<cr>
