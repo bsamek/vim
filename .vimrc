@@ -109,7 +109,6 @@ nnoremap <leader>/ :History/<cr>
 nnoremap <leader>? :Helptags<cr>
 nnoremap <leader>h :History<cr>
 nnoremap <leader>q :History:<cr>
-nnoremap <leader>l :Locate 
 
 nnoremap <leader>bb :Buffers<cr>
 nnoremap <leader>bc :BCommits<cr>
