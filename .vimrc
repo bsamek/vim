@@ -117,10 +117,14 @@ nnoremap <leader>fl :Locate
 nnoremap <leader>fq :History:<cr>
 nnoremap <leader>fs :Ag 
 
+" Encryption
+nnoremap <leader>j :Sedit<cr>
+nnoremap <leader>d :%!gpg<cr>
+nnoremap <leader>e :%!gpg -ear brian.samek@gmail.com<cr>
+
 " Misc
 nnoremap <leader>g :GoDef<cr>
 nnoremap <leader>r :w<cr>:so %<cr>
 nnoremap <leader>v V
-nnoremap <leader>j :Sedit<cr>
 nnoremap <leader>s :w<cr>
 inoremap jk <esc>
