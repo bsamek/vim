@@ -5,7 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle Plugins
-Plugin 'Shougo/unite.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'VundleVim/Vundle.vim'
@@ -19,6 +18,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'joshdick/onedark.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'pangloss/vim-javascript'
+Plugin 'pelodelfuego/vim-swoop'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
