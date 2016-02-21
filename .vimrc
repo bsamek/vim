@@ -10,16 +10,16 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
 Plugin 'joshdick/onedark.vim'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'pangloss/vim-javascript'
 Plugin 'pelodelfuego/vim-swoop'
-Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim'
@@ -76,32 +76,53 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Prevent preview buffer from appearing in vim-go
 set completeopt=menuone
 
+
 " Mappings
+
+" Leader
 let mapleader="\<Space>"
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <leader>/ :nohlsearch<cr>
-nnoremap <leader>ac :PluginClean<cr>
-nnoremap <leader>ai :PluginInstall<cr>
-nnoremap <leader>as :PluginSearch<cr>
-nnoremap <leader>au :PluginUpdate<cr>
-nnoremap <leader>b :buf
-nnoremap <leader>g :GoDef<cr>
-nnoremap <leader>j :tabnext<cr>
+
+" Vundle
+nnoremap <leader>pc :PluginClean<cr>
+nnoremap <leader>pi :PluginInstall<cr>
+nnoremap <leader>ps :PluginSearch<cr>
+nnoremap <leader>pu :PluginUpdate<cr>
+
+" Plugins
 nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>p "+p
-nnoremap <leader>r :w<cr>:so %<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
-nnoremap <leader>v V
-nnoremap <leader>w :w<cr>
-nnoremap <leader>s :Ag!
-nnoremap <leader>z za
-vnoremap <leader>d "+d
-vnoremap <leader>p "+p
-vnoremap <leader>y "+y
 
-" ctrlp
-let g:ctrlp_extensions = ['tag']
+" Clipboard
+nnoremap <leader>cp "+p
+nnoremap <leader>cP "+P
+vnoremap <leader>cd "+d
+vnoremap <leader>cy "+y
+
+" FZF
+nnoremap <leader>bb :Buffers<cr>
+nnoremap <leader>bc :BCommits<cr>
+nnoremap <leader>bs :BLines<cr>
+nnoremap <leader>bt :BTags<cr>
+nnoremap <leader>f' :Marks<cr>
+nnoremap <leader>f/ :History/<cr>
+nnoremap <leader>f: :Commands<cr>
+nnoremap <leader>f? :Helptags<cr>
+nnoremap <leader>fc :Commits<cr>
+nnoremap <leader>ff :GitFiles<cr>
+nnoremap <leader>fh :History<cr>
+nnoremap <leader>fl :Locate 
+nnoremap <leader>fm :Maps<cr>
+nnoremap <leader>fq :History:<cr>
+nnoremap <leader>fs :Ag 
+nnoremap <leader>ft :Tags<cr>
+nnoremap <leader>fu :Snippets<cr>
+nnoremap <leader>fw :Windows<cr>
+
+" Misc
+nnoremap <leader>g :GoDef<cr>
+nnoremap <leader>r :w<cr>:so %<cr>
+nnoremap <leader>v V
+nnoremap <leader>j :Sedit<cr>
+nnoremap <leader>s :w<cr>
+inoremap jk <esc>
