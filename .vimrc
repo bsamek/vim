@@ -5,25 +5,31 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle Plugins
-Plugin 'easymotion/vim-easymotion'
+Plugin 'Shougo/unite.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'vim-airline/vim-airline'
-Plugin 'fatih/vim-go'
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
 Plugin 'joshdick/onedark.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-ruby/vim-ruby'
 
 " End Vundle
@@ -53,7 +59,6 @@ set directory=~/.vimbak/tmp/     " Set swap directory
 set ignorecase              " Ignore case in search
 set smartcase               " Unless uppercase in present
 set incsearch               " Use incremental searching
-set hlsearch                " Highlight search results
 
 " Movement
 set scrolloff=5             " Keep five lines around the cursor
