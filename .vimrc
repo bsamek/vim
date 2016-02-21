@@ -73,6 +73,9 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+" Configure trailing whitespace
+let g:airline#extensions#whitespace#checks = [ 'indent', 'mixed-indent-file' ]
+
 " Prevent preview buffer from appearing in vim-go
 set completeopt=menuone
 
