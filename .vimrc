@@ -21,6 +21,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
@@ -88,11 +89,11 @@ nnoremap <leader>l :e#<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>o <C-^>
 nnoremap <leader>p "+p
-nnoremap <leader>r :so %<cr>
+nnoremap <leader>r :w<cr>:so %<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>v V
-nnoremap <leader>w :w<CR>
+nnoremap <leader>w :w<cr>
 nnoremap <leader>s :Ag!
 nnoremap <leader>z za
 vnoremap <leader>d "+d
