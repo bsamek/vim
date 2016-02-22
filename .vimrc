@@ -20,6 +20,7 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'pangloss/vim-javascript'
+Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim'
@@ -79,6 +80,9 @@ let g:airline#extensions#whitespace#checks = [ 'indent', 'mixed-indent-file' ]
 
 " Prevent preview buffer from appearing in vim-go
 set completeopt=menuone
+
+" Ag searches from git root
+let g:ag_working_path_mode='r'
 
 
 " Mappings
