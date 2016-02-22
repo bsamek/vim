@@ -120,7 +120,8 @@ nnoremap <leader>bs :BLines<cr>
 
 nnoremap <leader>fc :Commits<cr>
 nnoremap <leader>ff :GitFiles<cr>
-nnoremap <leader>fs :Ag 
+
+nnoremap <leader>s :Ag 
 
 " Encryption
 nnoremap <leader>j :Sedit<cr>
@@ -131,5 +132,5 @@ nnoremap <leader>e :%!gpg -ear brian.samek@gmail.com<cr>
 nnoremap <leader>g :GoDef<cr>
 nnoremap <leader>r :w<cr>:so %<cr>
 nnoremap <leader>v V
-nnoremap <leader>s :w<cr>
+nnoremap <leader>w :w<cr>
 inoremap jk <esc>
