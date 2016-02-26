@@ -97,6 +97,12 @@ nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>ps :PluginSearch<cr>
 nnoremap <leader>pu :PluginUpdate<cr>
 
+"Window movement
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
 " Plugins
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>t :TagbarToggle<cr>
