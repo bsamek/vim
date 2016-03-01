@@ -85,6 +85,8 @@ set completeopt=menuone
 " Ag searches from git root
 let g:ag_working_path_mode='r'
 
+" Enable goimports on save
+let g:go_fmt_command = "goimports"
 
 " Mappings
 
