@@ -110,11 +110,10 @@ nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
 
-" Clipboard
-nnoremap <leader>cp "+p
-nnoremap <leader>cP "+P
-vnoremap <leader>cd "+d
-vnoremap <leader>cy "+y
+" Colorschemes
+nnoremap <leader>cd :colorscheme default<cr>
+nnoremap <leader>cm :colorscheme molokai<cr>
+nnoremap <leader>co :colorscheme onedark<cr>
 
 " FZF
 nnoremap <leader>/ :History/<cr>
