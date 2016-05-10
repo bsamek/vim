@@ -116,28 +116,25 @@ nnoremap <leader>cm :colorscheme molokai<cr>
 nnoremap <leader>co :colorscheme onedark<cr>
 
 " FZF
-nnoremap <leader>/ :History/<cr>
-nnoremap <leader>? :Helptags<cr>
-nnoremap <leader>h :History<cr>
-nnoremap <leader>q :History:<cr>
-
-nnoremap <leader>bb :Buffers<cr>
-nnoremap <leader>bc :BCommits<cr>
-nnoremap <leader>bs :BLines<cr>
-
-nnoremap <leader>fc :Commits<cr>
-nnoremap <leader>ff :GitFiles<cr>
-
-nnoremap <leader>s :Ag 
+nnoremap <leader>bb :Buffers<cr>        " Open buffers
+nnoremap <leader>bc :BCommits<cr>       " Commits for current buffer
+nnoremap <leader>bh :History<cr>        " Buffers open and opened
+nnoremap <leader>bs :BLines<cr>         " Lines in current buffer
+nnoremap <leader>ff :Files<cr>          " Files in CWD
+nnoremap <leader>fc :Commits<cr>        " Project commits
+nnoremap <leader>fg :GitFiles<cr>       " Files in git project"
+nnoremap <leader>fs :Ag 
+nnoremap <leader>vc :Colors<cr>         " Colorschemes
+nnoremap <leader>vh :Helptags<cr>       " Search help
+nnoremap <leader>vm :Marks<cr>	        " Marks
+nnoremap <leader>vq :History:<cr>       " Search commands
+nnoremap <leader>vs :History/<cr>       " Search history
+nnoremap <leader>vw :Windows<cr>        " Windows
 
 " Encryption
-nnoremap <leader>j :Sedit<cr>
 nnoremap <leader>d :%!gpg<cr>
 nnoremap <leader>e :%!gpg -ear brian.samek@gmail.com<cr>
 
 " Misc
 nnoremap <leader>g :GoDef<cr>
 nnoremap <leader>r :w<cr>:so %<cr>
-nnoremap <leader>v V
-nnoremap <leader>w :w<cr>
-inoremap jk <esc>
