@@ -24,6 +24,7 @@ Plugin 'pelodelfuego/vim-swoop'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-endwise'
@@ -88,6 +89,12 @@ let g:ag_working_path_mode='r'
 " Enable goimports on save
 let g:go_fmt_command = "goimports"
 
+" Syntastic
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+
 " Mappings
 
 " Leader
@@ -136,5 +143,9 @@ nnoremap <leader>d :%!gpg<cr>
 nnoremap <leader>e :%!gpg -ear brian.samek@gmail.com<cr>
 
 " Misc
-nnoremap <leader>g :GoDef<cr>
+nnoremap <leader>gd :GoDef<cr>
+nnoremap <leader>gl :GoLint<cr>
 nnoremap <leader>r :w<cr>:so %<cr>
+nnoremap <leader>sc :SyntasticCheck<cr>
+nnoremap <leader>si :SyntasticInfo<cr>
+nnoremap <leader>st :SyntasticToggle<cr>
