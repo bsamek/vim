@@ -10,17 +10,19 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'bilalq/lite-dfm'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'joshdick/onedark.vim'
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'junegunn/fzf.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'mhinz/vim-startify'
 Plugin 'pangloss/vim-javascript'
 Plugin 'pelodelfuego/vim-swoop'
+Plugin 'plugin/vim-expand-region'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -89,16 +91,16 @@ let g:ag_working_path_mode='r'
 " Enable goimports on save
 let g:go_fmt_command = "goimports"
 
-" Syntastic
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
+" Startify
+let g:startify_session_dir = '~/.vimsessions'
 
 " Mappings
 
 " Leader
 let mapleader="\<Space>"
+
+" Reload config
+nnoremap <leader>r :w<cr>:so %<cr>
 
 " Vundle
 nnoremap <leader>pc :PluginClean<cr>
@@ -106,46 +108,24 @@ nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>ps :PluginSearch<cr>
 nnoremap <leader>pu :PluginUpdate<cr>
 
-"Window movement
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
-
 " Plugins
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
+nnoremap <leader>z :LiteDFMToggle<cr>
 
 " Colorschemes
 nnoremap <leader>cd :colorscheme default<cr>
 nnoremap <leader>cm :colorscheme molokai<cr>
 nnoremap <leader>co :colorscheme onedark<cr>
 
-" FZF
-nnoremap <leader>bb :Buffers<cr>        " Open buffers
-nnoremap <leader>bc :BCommits<cr>       " Commits for current buffer
-nnoremap <leader>bh :History<cr>        " Buffers open and opened
-nnoremap <leader>bs :BLines<cr>         " Lines in current buffer
-nnoremap <leader>ff :Files<cr>          " Files in CWD
-nnoremap <leader>fc :Commits<cr>        " Project commits
-nnoremap <leader>fg :GitFiles<cr>       " Files in git project"
-nnoremap <leader>fs :Ag 
-nnoremap <leader>vc :Colors<cr>         " Colorschemes
-nnoremap <leader>vh :Helptags<cr>       " Search help
-nnoremap <leader>vm :Marks<cr>	        " Marks
-nnoremap <leader>vq :History:<cr>       " Search commands
-nnoremap <leader>vs :History/<cr>       " Search history
-nnoremap <leader>vw :Windows<cr>        " Windows
-
 " Encryption
 nnoremap <leader>d :%!gpg<cr>
 nnoremap <leader>e :%!gpg -ear brian.samek@gmail.com<cr>
 
-" Misc
+" Syntax
 nnoremap <leader>gd :GoDef<cr>
 nnoremap <leader>gl :GoLint<cr>
-nnoremap <leader>r :w<cr>:so %<cr>
 nnoremap <leader>sc :SyntasticCheck<cr>
 nnoremap <leader>si :SyntasticInfo<cr>
 nnoremap <leader>st :SyntasticToggle<cr>
