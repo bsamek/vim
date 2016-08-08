@@ -128,7 +128,6 @@ nnoremap <leader>z :LiteDFMToggle<cr>
 
 " Colorschemes
 nnoremap <leader>cd :colorscheme default<cr>
-nnoremap <leader>cm :colorscheme molokai<cr>
 nnoremap <leader>co :colorscheme onedark<cr>
 
 " Encryption
