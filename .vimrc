@@ -151,3 +151,4 @@ nnoremap <leader>a :Gcd <bar> Ack
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
+nnoremap <leader>0 :setlocal number!<cr>
