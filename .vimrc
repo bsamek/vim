@@ -5,12 +5,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle Plugins
-Plugin 'SirVer/ultisnips'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'bilalq/lite-dfm'
+Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
@@ -20,25 +16,28 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'joshdick/onedark.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'mhinz/vim-startify'
+Plugin 'mileszs/ack.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'pelodelfuego/vim-swoop'
-Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'SirVer/ultisnips'
 Plugin 'sjl/gundo.vim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
 
 " End Vundle
 call vundle#end()
@@ -87,14 +86,12 @@ let g:airline#extensions#whitespace#checks = [ 'indent', 'mixed-indent-file' ]
 " Prevent preview buffer from appearing in vim-go
 set completeopt=menuone
 
-" Ag searches from git root
-let g:ag_working_path_mode='r'
-
 " Enable goimports on save
 let g:go_fmt_command = "goimports"
 
-" Startify
-let g:startify_session_dir = '~/.vimsessions'
+" Sessions
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
 
 "Syntastic
 set statusline+=%#warningmsg#
@@ -102,7 +99,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_python_checkers = ['python', 'flake8']
@@ -113,7 +110,7 @@ let g:syntastic_python_checkers = ['python', 'flake8']
 let mapleader="\<Space>"
 
 " Reload config
-nnoremap <leader>r :w<cr>:so %<cr>
+nnoremap <leader>c :w<cr>:so %<cr>
 
 " Vundle
 nnoremap <leader>pc :PluginClean<cr>
@@ -121,24 +118,36 @@ nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>ps :PluginSearch<cr>
 nnoremap <leader>pu :PluginUpdate<cr>
 
-" Plugins
-nnoremap <leader>a :Ag 
-nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>t :TagbarToggle<cr>
-nnoremap <leader>u :GundoToggle<cr>
-nnoremap <leader>z :LiteDFMToggle<cr>
-
 " Colorschemes
 nnoremap <leader>cd :colorscheme default<cr>
-nnoremap <leader>co :colorscheme onedark<cr>
 
 " Encryption
 nnoremap <leader>d :%!gpg<cr>
 nnoremap <leader>e :%!gpg -ear brian.samek@gmail.com<cr>
 
-" Syntax
+"Sessions
+nnoremap <leader>ss :SaveSession 
+nnoremap <leader>so :OpenSession 
+
+" Golang
 nnoremap <leader>gd :GoDef<cr>
 nnoremap <leader>gl :GoLint<cr>
+
+" Syntastic
 nnoremap <leader>sc :SyntasticCheck<cr>
 nnoremap <leader>si :SyntasticInfo<cr>
 nnoremap <leader>st :SyntasticToggle<cr>
+
+" Vimux
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
+map <Leader>vi :VimuxInspectRunner<CR>
+map <Leader>vq :VimuxCloseRunner<CR>
+map <Leader>vx :VimuxInterruptRunner<CR>
+map <Leader>vz :call VimuxZoomRunner()<CR>
+
+" Misc
+nnoremap <leader>a :Gcd <bar> Ack 
+nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>t :TagbarToggle<cr>
+nnoremap <leader>u :GundoToggle<cr>
