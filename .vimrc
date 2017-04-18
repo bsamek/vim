@@ -5,8 +5,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle Plugins
-Plugin 'airblade/vim-gitgutter'
 Plugin 'benmills/vimux'
+Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
@@ -16,7 +16,9 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'joshdick/onedark.vim'
 Plugin 'justinmk/vim-sneak'
 Plugin 'kien/ctrlp.vim'
+Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'majutsushi/tagbar'
+Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'pelodelfuego/vim-swoop'
@@ -52,11 +54,12 @@ set wildmenu                " Use enhanced command-line completion
 set wildignorecase          " Don't use case for file/directory completion
 set hidden                  " Hide buffers instead of closing them
 set laststatus=2            " Always show status bar
+set guioptions=Ace
 
-" Font
-let g:onedark_termcolors=16
-colorscheme onedark
+" Colorscheme
+colorscheme default
 set background=dark
+let g:onedark_termcolors = 16
 
 " Backup
 set backup                  " Keep backups
@@ -67,6 +70,7 @@ set directory=~/.vimbak/tmp/     " Set swap directory
 set ignorecase              " Ignore case in search
 set smartcase               " Unless uppercase in present
 set incsearch               " Use incremental searching
+let g:ackprg="ag --vimgrep"
 
 " Movement
 set scrolloff=5             " Keep five lines around the cursor
@@ -91,8 +95,11 @@ set completeopt=menuone
 let g:go_fmt_command = "goimports"
 
 " Sessions
-let g:session_autosave = 'no'
-let g:session_autoload = 'no'
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
+let g:session_autosave_periodic = 1
+let g:session_autosave_silent = 1
+let g:session_default_to_last = 1
 
 "Syntastic
 set statusline+=%#warningmsg#
@@ -131,8 +138,19 @@ nnoremap <leader>ss :SaveSession
 nnoremap <leader>so :OpenSession 
 
 " Golang
-nnoremap <leader>gd :GoDef<cr>
+nnoremap <leader>gd :GoDoc<cr>
+nnoremap <leader>gg :GoDef<cr>
 nnoremap <leader>gl :GoLint<cr>
+nnoremap <leader>gi :GoImplements<cr>
+nnoremap <leader>gr :GoReferrers<cr>
+
+" YCM
+nnoremap <leader>jc :YcmCompleter GoToDeclaration<cr>
+nnoremap <leader>jd :YcmCompleter GoToDefinition<cr>
+nnoremap <leader>jg :YcmCompleter GoTo<cr>
+nnoremap <leader>jr :YcmCompleter GoToReferences<cr>
+nnoremap <leader>ji :YcmCompleter GoToImplementation<cr>
+nnoremap <leader>jd :YcmCompleter GetDoc<cr>
 
 " Syntastic
 nnoremap <leader>sc :SyntasticCheck<cr>
@@ -147,8 +165,15 @@ map <Leader>vq :VimuxCloseRunner<CR>
 map <Leader>vx :VimuxInterruptRunner<CR>
 map <Leader>vz :call VimuxZoomRunner()<CR>
 
+" CtrlP
+nmap <leader>f :CtrlPMixed<cr>
+nmap <leader>b :CtrlPBuffer<cr>
+nmap <leader>m :CtrlPMRU<cr>
+nmap <leader>q :CtrlPQuickfix<cr>
+let g:ctrlp_extensions = ['mixed', 'quickfix', 'line']
+
 " Misc
-nnoremap <leader>a :Gcd <bar> Ack 
+nnoremap <leader>a :Gcd <bar> Ack! 
 nnoremap <leader>n :NERDTreeFind<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
