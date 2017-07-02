@@ -5,21 +5,19 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle Plugins
-Plugin 'benmills/vimux'
 Plugin 'chriskempson/base16-vim'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'joshdick/onedark.vim'
 Plugin 'justinmk/vim-sneak'
 Plugin 'kien/ctrlp.vim'
-Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'mtth/scratch.vim'
+Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'pelodelfuego/vim-swoop'
 Plugin 'scrooloose/nerdcommenter'
@@ -27,8 +25,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
 Plugin 'sjl/gundo.vim'
-Plugin 'terryma/vim-expand-region'
-Plugin 'terryma/vim-multiple-cursors'
+Plugin 't9md/vim-choosewin'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
@@ -40,7 +37,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
 
 " End Vundle
 call vundle#end()
@@ -55,11 +51,13 @@ set wildignorecase          " Don't use case for file/directory completion
 set hidden                  " Hide buffers instead of closing them
 set laststatus=2            " Always show status bar
 set guioptions=Ace
+set guifont="Source Code Pro:h11"
+set number
 
 " Colorscheme
-colorscheme default
-set background=dark
-let g:onedark_termcolors = 16
+colorscheme base16-solarized-light
+nnoremap <leader>cd :colorscheme base16-solarized-dark<cr>
+nnoremap <leader>cl :colorscheme base16-solarized-light<cr>
 
 " Backup
 set backup                  " Keep backups
@@ -94,23 +92,18 @@ set completeopt=menuone
 " Enable goimports on save
 let g:go_fmt_command = "goimports"
 
-" Sessions
-let g:session_autosave = 'yes'
-let g:session_autoload = 'yes'
-let g:session_autosave_periodic = 1
-let g:session_autosave_silent = 1
-let g:session_default_to_last = 1
-
 "Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_python_checkers = ['python', 'flake8']
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_go_checkers = ['go', 'golint']
 
 " Mappings
 
@@ -118,7 +111,7 @@ let g:syntastic_python_checkers = ['python', 'flake8']
 let mapleader="\<Space>"
 
 " Reload config
-nnoremap <leader>c :w<cr>:so %<cr>
+nnoremap <leader>r :w<cr>:so %<cr>
 
 " Vundle
 nnoremap <leader>pc :PluginClean<cr>
@@ -126,16 +119,9 @@ nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>ps :PluginSearch<cr>
 nnoremap <leader>pu :PluginUpdate<cr>
 
-" Colorschemes
-nnoremap <leader>cd :colorscheme default<cr>
-
 " Encryption
 nnoremap <leader>d :%!gpg<cr>
 nnoremap <leader>e :%!gpg -ear brian.samek@gmail.com<cr>
-
-"Sessions
-nnoremap <leader>ss :SaveSession 
-nnoremap <leader>so :OpenSession 
 
 " Golang
 nnoremap <leader>gd :GoDoc<cr>
@@ -157,14 +143,6 @@ nnoremap <leader>sc :SyntasticCheck<cr>
 nnoremap <leader>si :SyntasticInfo<cr>
 nnoremap <leader>st :SyntasticToggle<cr>
 
-" Vimux
-map <Leader>vp :VimuxPromptCommand<CR>
-map <Leader>vl :VimuxRunLastCommand<CR>
-map <Leader>vi :VimuxInspectRunner<CR>
-map <Leader>vq :VimuxCloseRunner<CR>
-map <Leader>vx :VimuxInterruptRunner<CR>
-map <Leader>vz :call VimuxZoomRunner()<CR>
-
 " CtrlP
 nmap <leader>f :CtrlPMixed<cr>
 nmap <leader>b :CtrlPBuffer<cr>
@@ -174,7 +152,8 @@ let g:ctrlp_extensions = ['mixed', 'quickfix', 'line']
 
 " Misc
 nnoremap <leader>a :Gcd <bar> Ack! 
-nnoremap <leader>n :NERDTreeFind<cr>
+nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>0 :setlocal number!<cr>
+nmap  -  <Plug>(choosewin)
