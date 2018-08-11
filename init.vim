@@ -23,6 +23,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Shougo/denite.nvim'
 Plugin 'Shougo/deoplete.nvim'
+Plugin 'Shougo/neomru.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 't9md/vim-choosewin'
 Plugin 'tpope/vim-endwise'
@@ -93,19 +94,21 @@ nnoremap  -  <Plug>(choosewin)
 nnoremap <leader>0 :setlocal number!<cr>
 nnoremap <leader>a :Gcd <bar> Ack! 
 nnoremap <leader>b :Denite buffer<cr>
+nnoremap <leader>c :nohlsearch<cr>
 nnoremap <leader>d :%!gpg<cr>
 nnoremap <leader>e :%!gpg -ear brian.samek@gmail.com<cr>
-nnoremap <leader>f :Gcd <bar> :Denite file<cr>
+nnoremap <leader>f :Gcd <bar> :Denite file/rec<cr>
 nnoremap <leader>gd :GoDoc<cr>
 nnoremap <leader>gg :GoDef<cr>
 nnoremap <leader>gi :GoImplements<cr>
 nnoremap <leader>gl :GoLint<cr>
 nnoremap <leader>gr :GoReferrers<cr>
+nnoremap <leader>m :Denite file_mru<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>pc :PluginClean<cr>
 nnoremap <leader>pi :PluginInstall<cr>
-nnoremap <leader>ps :PluginSearch<cr>
 nnoremap <leader>pu :PluginUpdate<cr>
 nnoremap <leader>r :w<cr>:so %<cr>
+nnoremap <leader>s :w<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
