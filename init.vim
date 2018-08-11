@@ -10,7 +10,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
-Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'justinmk/vim-sneak'
 Plugin 'kien/ctrlp.vim'
@@ -24,7 +23,8 @@ Plugin 'pelodelfuego/vim-swoop'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'SirVer/ultisnips'
+Plugin 'Shougo/denite.nvim'
+Plugin 'Shougo/deoplete.nvim'
 Plugin 'sjl/gundo.vim'
 Plugin 't9md/vim-choosewin'
 Plugin 'tpope/vim-endwise'
@@ -33,7 +33,6 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'VundleVim/Vundle.vim'
@@ -41,7 +40,7 @@ Plugin 'VundleVim/Vundle.vim'
 " End Vundle
 call vundle#end()
 
-" The basics
+" Basics
 filetype plugin indent on   " Turn on filetype plugin and indent
 syntax enable               " Turn on syntax highlighting
 set autochdir               " Change to working directory on file open
@@ -50,8 +49,6 @@ set wildmenu                " Use enhanced command-line completion
 set wildignorecase          " Don't use case for file/directory completion
 set hidden                  " Hide buffers instead of closing them
 set laststatus=2            " Always show status bar
-set guioptions=Ace
-set guifont="Source Code Pro:h11"
 set number
 
 " Colorscheme
@@ -78,10 +75,8 @@ set autoindent              " Auto indent lines
 " Custom scratch buffers for edit command
 command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
 
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" deoplete
+let g:deoplete#enable_at_startup = 1
 
 " Configure trailing whitespace
 let g:airline#extensions#whitespace#checks = [ 'indent', 'mixed-indent-file' ]
@@ -92,68 +87,30 @@ set completeopt=menuone
 " Enable goimports on save
 let g:go_fmt_command = "goimports"
 
-"Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_python_checkers = ['python', 'flake8']
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-let g:syntastic_go_checkers = ['go', 'golint']
-
-" Mappings
-
 " Leader
 let mapleader="\<Space>"
 
-" Reload config
-nnoremap <leader>r :w<cr>:so %<cr>
-
-" Vundle
+" Mappings
+nnoremap  -  <Plug>(choosewin)
+nnoremap <leader>0 :setlocal number!<cr>
+nnoremap <leader>a :Gcd <bar> Ack! 
+nnoremap <leader>b :Denite buffer<cr>
+nnoremap <leader>d :%!gpg<cr>
+nnoremap <leader>e :%!gpg -ear brian.samek@gmail.com<cr>
+nnoremap <leader>f :Gcd <bar> :Denite file<cr>
+nnoremap <leader>gd :GoDoc<cr>
+nnoremap <leader>gg :GoDef<cr>
+nnoremap <leader>gi :GoImplements<cr>
+nnoremap <leader>gl :GoLint<cr>
+nnoremap <leader>gr :GoReferrers<cr>
+nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>pc :PluginClean<cr>
 nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>ps :PluginSearch<cr>
 nnoremap <leader>pu :PluginUpdate<cr>
-
-" Encryption
-nnoremap <leader>d :%!gpg<cr>
-nnoremap <leader>e :%!gpg -ear brian.samek@gmail.com<cr>
-
-" Golang
-nnoremap <leader>gd :GoDoc<cr>
-nnoremap <leader>gg :GoDef<cr>
-nnoremap <leader>gl :GoLint<cr>
-nnoremap <leader>gi :GoImplements<cr>
-nnoremap <leader>gr :GoReferrers<cr>
-
-" YCM
-nnoremap <leader>jc :YcmCompleter GoToDeclaration<cr>
-nnoremap <leader>jd :YcmCompleter GoToDefinition<cr>
-nnoremap <leader>jg :YcmCompleter GoTo<cr>
-nnoremap <leader>jr :YcmCompleter GoToReferences<cr>
-nnoremap <leader>ji :YcmCompleter GoToImplementation<cr>
-nnoremap <leader>jd :YcmCompleter GetDoc<cr>
-
-" Syntastic
+nnoremap <leader>r :w<cr>:so %<cr>
 nnoremap <leader>sc :SyntasticCheck<cr>
 nnoremap <leader>si :SyntasticInfo<cr>
 nnoremap <leader>st :SyntasticToggle<cr>
-
-" CtrlP
-nmap <leader>f :CtrlPMixed<cr>
-nmap <leader>b :CtrlPBuffer<cr>
-nmap <leader>m :CtrlPMRU<cr>
-nmap <leader>q :CtrlPQuickfix<cr>
-let g:ctrlp_extensions = ['mixed', 'quickfix', 'line']
-
-" Misc
-nnoremap <leader>a :Gcd <bar> Ack! 
-nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
-nnoremap <leader>0 :setlocal number!<cr>
-nmap  -  <Plug>(choosewin)
