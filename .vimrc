@@ -6,6 +6,7 @@ call vundle#begin()
 
 " Vundle Plugins
 Plugin 'chriskempson/base16-vim'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
