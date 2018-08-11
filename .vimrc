@@ -37,7 +37,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'xolox/vim-misc'
 
 " End Vundle
 call vundle#end()
