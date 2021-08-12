@@ -22,6 +22,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'pelodelfuego/vim-swoop'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/denite.nvim'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'sjl/gundo.vim'
@@ -108,5 +109,8 @@ nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>ps :PluginSearch<cr>
 nnoremap <leader>pu :PluginUpdate<cr>
 nnoremap <leader>r :w<cr>:so %<cr>
+nnoremap <leader>sc :SyntasticCheck<cr>
+nnoremap <leader>si :SyntasticInfo<cr>
+nnoremap <leader>st :SyntasticToggle<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
