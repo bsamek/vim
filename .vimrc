@@ -1,34 +1,24 @@
 " Vundle setup
 set nocompatible
+set encoding=utf-8
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle Plugins
-Plugin 'chriskempson/base16-vim'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
-Plugin 'godlygeek/tabular'
-Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'justinmk/vim-sneak'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'mtth/scratch.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
-Plugin 'pelodelfuego/vim-swoop'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'SirVer/ultisnips'
 Plugin 'sjl/gundo.vim'
-Plugin 't9md/vim-choosewin'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
@@ -37,6 +27,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'airblade/vim-rooter'
 
 " End Vundle
 call vundle#end()
@@ -55,14 +46,9 @@ set guifont="Source Code Pro:h11"
 set number
 
 " Colorscheme
-colorscheme base16-solarized-light
-nnoremap <leader>cd :colorscheme base16-solarized-dark<cr>
-nnoremap <leader>cl :colorscheme base16-solarized-light<cr>
-
-" Backup
-set backup                  " Keep backups
-set backupdir=~/.vimbak/backup/  " Set backup directory
-set directory=~/.vimbak/tmp/     " Set swap directory
+" colorscheme base16-solarized-light
+" nnoremap <leader>cd :colorscheme base16-solarized-dark<cr>
+" nnoremap <leader>cl :colorscheme base16-solarized-light<cr>
 
 " Searching
 set ignorecase              " Ignore case in search
@@ -78,11 +64,6 @@ set autoindent              " Auto indent lines
 " Custom scratch buffers for edit command
 command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
 
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 " Configure trailing whitespace
 let g:airline#extensions#whitespace#checks = [ 'indent', 'mixed-indent-file' ]
 
@@ -91,19 +72,6 @@ set completeopt=menuone
 
 " Enable goimports on save
 let g:go_fmt_command = "goimports"
-
-"Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_python_checkers = ['python', 'flake8']
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-let g:syntastic_go_checkers = ['go', 'golint']
 
 " Mappings
 
@@ -138,11 +106,6 @@ nnoremap <leader>jr :YcmCompleter GoToReferences<cr>
 nnoremap <leader>ji :YcmCompleter GoToImplementation<cr>
 nnoremap <leader>jd :YcmCompleter GetDoc<cr>
 
-" Syntastic
-nnoremap <leader>sc :SyntasticCheck<cr>
-nnoremap <leader>si :SyntasticInfo<cr>
-nnoremap <leader>st :SyntasticToggle<cr>
-
 " CtrlP
 nmap <leader>f :CtrlPMixed<cr>
 nmap <leader>b :CtrlPBuffer<cr>
@@ -151,7 +114,7 @@ nmap <leader>q :CtrlPQuickfix<cr>
 let g:ctrlp_extensions = ['mixed', 'quickfix', 'line']
 
 " Misc
-nnoremap <leader>a :Gcd <bar> Ack! 
+nnoremap <leader>a :Ack 
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
