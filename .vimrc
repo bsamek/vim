@@ -45,11 +45,6 @@ set guioptions=Ace
 set guifont="Source Code Pro:h11"
 set number
 
-" Colorscheme
-" colorscheme base16-solarized-light
-" nnoremap <leader>cd :colorscheme base16-solarized-dark<cr>
-" nnoremap <leader>cl :colorscheme base16-solarized-light<cr>
-
 " Searching
 set ignorecase              " Ignore case in search
 set smartcase               " Unless uppercase in present
