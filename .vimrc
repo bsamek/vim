@@ -28,6 +28,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-rooter'
+Plugin 'tpope/vim-fugitive'
 
 " End Vundle
 call vundle#end()
