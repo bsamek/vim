@@ -104,6 +104,7 @@ let g:ctrlp_extensions = ['mixed', 'quickfix', 'line']
 
 " Misc
 nnoremap <leader>a :Ack 
+nnoremap <leader>e ye :Ack <C-r>" 
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
