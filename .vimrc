@@ -57,9 +57,6 @@ set scrolloff=5             " Keep five lines around the cursor
 set backspace=2             " Backspace over indent, EOL, and start
 set autoindent              " Auto indent lines
 
-" Custom scratch buffers for edit command
-command! -bar -nargs=* Sedit call functions#ScratchEdit('edit', <q-args>)
-
 " Configure trailing whitespace
 let g:airline#extensions#whitespace#checks = [ 'indent', 'mixed-indent-file' ]
 
@@ -82,10 +79,6 @@ nnoremap <leader>pc :PluginClean<cr>
 nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>ps :PluginSearch<cr>
 nnoremap <leader>pu :PluginUpdate<cr>
-
-" Encryption
-nnoremap <leader>d :%!gpg<cr>
-nnoremap <leader>e :%!gpg -ear brian.samek@gmail.com<cr>
 
 " Golang
 nnoremap <leader>gd :GoDoc<cr>
@@ -115,4 +108,3 @@ nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>0 :setlocal number!<cr>
-nmap  -  <Plug>(choosewin)
