@@ -50,7 +50,7 @@ set number
 set ignorecase              " Ignore case in search
 set smartcase               " Unless uppercase in present
 set incsearch               " Use incremental searching
-let g:ackprg="ag --vimgrep"
+let g:ackprg="rg --vimgrep --no-heading"
 
 " Movement
 set scrolloff=5             " Keep five lines around the cursor
