@@ -12,9 +12,6 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'justinmk/vim-sneak'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'mattn/emmet-vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -23,12 +20,15 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-rooter'
 Plugin 'tpope/vim-fugitive'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'jremmen/vim-ripgrep'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " End Vundle
 call vundle#end()
@@ -43,14 +43,13 @@ set wildignorecase          " Don't use case for file/directory completion
 set hidden                  " Hide buffers instead of closing them
 set laststatus=2            " Always show status bar
 set guioptions=Ace
-set guifont="Source Code Pro:h11"
 set number
 
 " Searching
 set ignorecase              " Ignore case in search
 set smartcase               " Unless uppercase in present
 set incsearch               " Use incremental searching
-let g:ackprg="rg --vimgrep --no-heading"
+let g:rg_derive_root=1
 
 " Movement
 set scrolloff=5             " Keep five lines around the cursor
@@ -80,20 +79,20 @@ nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>ps :PluginSearch<cr>
 nnoremap <leader>pu :PluginUpdate<cr>
 
-" Golang
-nnoremap <leader>gd :GoDoc<cr>
-nnoremap <leader>gg :GoDef<cr>
-nnoremap <leader>gl :GoLint<cr>
-nnoremap <leader>gi :GoImplements<cr>
-nnoremap <leader>gr :GoReferrers<cr>
-
 " YCM
 nnoremap <leader>jc :YcmCompleter GoToDeclaration<cr>
 nnoremap <leader>jd :YcmCompleter GoToDefinition<cr>
 nnoremap <leader>jg :YcmCompleter GoTo<cr>
 nnoremap <leader>jr :YcmCompleter GoToReferences<cr>
 nnoremap <leader>ji :YcmCompleter GoToImplementation<cr>
-nnoremap <leader>jd :YcmCompleter GetDoc<cr>
+nnoremap <leader>j? :YcmCompleter GetDoc<cr>"
+
+" Golang
+nnoremap <leader>gd :GoDoc<cr>
+nnoremap <leader>gg :GoDef<cr>
+nnoremap <leader>gl :GoLint<cr>
+nnoremap <leader>gi :GoImplements<cr>
+nnoremap <leader>gr :GoReferrers<cr>
 
 " CtrlP
 nmap <leader>f :CtrlPMixed<cr>
@@ -103,9 +102,7 @@ nmap <leader>q :CtrlPQuickfix<cr>
 let g:ctrlp_extensions = ['mixed', 'quickfix', 'line']
 
 " Misc
-nnoremap <leader>a :Ack 
-nnoremap <leader>e ye :Ack <C-r>" 
+nnoremap <leader>s :Rg 
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>t :TagbarToggle<cr>
-nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>0 :setlocal number!<cr>
