@@ -37,7 +37,6 @@ call vundle#end()
 filetype plugin indent on   " Turn on filetype plugin and indent
 syntax enable               " Turn on syntax highlighting
 set autochdir               " Change to working directory on file open
-set textwidth=78            " Set textwidth to 78
 set wildmenu                " Use enhanced command-line completion
 set wildignorecase          " Don't use case for file/directory completion
 set hidden                  " Hide buffers instead of closing them
@@ -100,6 +99,7 @@ nmap <leader>b :CtrlPBuffer<cr>
 nmap <leader>m :CtrlPMRU<cr>
 nmap <leader>q :CtrlPQuickfix<cr>
 let g:ctrlp_extensions = ['mixed', 'quickfix', 'line']
+let g:ctrlp_show_hidden = 1
 
 " Misc
 nnoremap <leader>s :Rg 
