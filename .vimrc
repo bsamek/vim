@@ -29,6 +29,7 @@ Plugin 'neoclide/coc.nvim'
 Plugin 'scrooloose/syntastic'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'mhinz/vim-signify'
 
 " End Vundle
 call vundle#end()
