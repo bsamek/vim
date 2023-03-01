@@ -6,30 +6,30 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle Plugins
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'airblade/vim-rooter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'github/copilot.vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'jremmen/vim-ripgrep'
 Plugin 'justinmk/vim-sneak'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'mhinz/vim-signify'
+Plugin 'neoclide/coc.nvim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-airline/vim-airline'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'airblade/vim-rooter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'neoclide/coc.nvim'
-Plugin 'scrooloose/syntastic'
-Plugin 'jremmen/vim-ripgrep'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'mhinz/vim-signify'
 
 " End Vundle
 call vundle#end()
@@ -68,7 +68,8 @@ let g:go_fmt_command = "goimports"
 " Mappings
 
 " Leader
-let mapleader="\<Space>"
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 " Reload config
 nnoremap <leader>r :w<cr>:so %<cr>
@@ -87,7 +88,7 @@ nnoremap <leader>gi :GoImplements<cr>
 nnoremap <leader>gr :GoReferrers<cr>
 
 " Misc
-nnoremap <leader>s :Rg
+nnoremap <leader>s :Rg 
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>0 :setlocal number!<cr>
@@ -142,7 +143,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
