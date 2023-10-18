@@ -11,7 +11,6 @@ Plugin 'airblade/vim-rooter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'github/copilot.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'justinmk/vim-sneak'
@@ -29,6 +28,7 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-airline/vim-airline'
+Plugin 'shime/vim-livedown'
 
 " End Vundle
 call vundle#end()
