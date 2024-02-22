@@ -18,6 +18,7 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'mhinz/vim-signify'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -30,7 +31,6 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-airline/vim-airline'
-Plugin 'ycm-core/YouCompleteMe'
 
 " End Vundle
 call vundle#end()
@@ -80,14 +80,6 @@ nnoremap <leader>pc :PluginClean<cr>
 nnoremap <leader>pi :PluginInstall<cr>
 nnoremap <leader>ps :PluginSearch<cr>
 nnoremap <leader>pu :PluginUpdate<cr>
-
-" YCM
-nnoremap <leader>jc :YcmCompleter GoToDeclaration<cr>
-nnoremap <leader>jd :YcmCompleter GoToDefinition<cr>
-nnoremap <leader>jg :YcmCompleter GoTo<cr>
-nnoremap <leader>jr :YcmCompleter GoToReferences<cr>
-nnoremap <leader>ji :YcmCompleter GoToImplementation<cr>
-nnoremap <leader>j? :YcmCompleter GetDoc<cr>"
 
 " Golang
 nnoremap <leader>gd :GoDoc<cr>
